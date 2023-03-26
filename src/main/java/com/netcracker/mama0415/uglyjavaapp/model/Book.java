@@ -1,21 +1,13 @@
 package com.netcracker.mama0415.uglyjavaapp.model;
 
 public class Book {
-    private String id;
     private String name;
     private String description;
     private String author;
     private int pageCount;
-    private String isbn;
+    private String isbn13;
+    private String isbn10;
     private String ocls;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -49,12 +41,20 @@ public class Book {
         this.pageCount = pageCount;
     }
 
-    public String getIsbn() {
-        return isbn;
+    public String getIsbn13() {
+        return isbn13;
     }
 
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
+    public void setIsbn13(String isbn13) {
+        this.isbn13 = isbn13;
+    }
+
+    public String getIsbn10() {
+        return isbn10;
+    }
+
+    public void setIsbn10(String isbn10) {
+        this.isbn10 = isbn10;
     }
 
     public String getOcls() {

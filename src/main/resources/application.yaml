@@ -1,0 +1,6 @@
+ugly-app:
+  jdbc:
+    user: UGLY_APP
+    password: UGLY_APP
+    host: localhost
+    port: 5432
