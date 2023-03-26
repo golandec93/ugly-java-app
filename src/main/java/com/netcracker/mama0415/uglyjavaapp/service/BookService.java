@@ -19,8 +19,8 @@ public class BookService {
 
     public Collection<Book> getBooks() {
         final Connection conn = jdbcAdapter.getConnection();
-        try(Statement stmnt = conn.createStatement()){
-            ResultSet resultSet = stmnt.executeQuery("select * from books");
+        try(Statement stmt = conn.createStatement()) {
+            ResultSet resultSet = stmt.executeQuery("select * from books");
             Collection<Book> books = new ArrayList<>();
             while (resultSet.next()){
                 Book book = new Book();
@@ -45,7 +45,30 @@ public class BookService {
         }
     }
 
-    public Book getBook(String bookId) {
-        return null;
+    public Book getBook(String isbn13) {
+        final Connection conn = jdbcAdapter.getConnection();
+        try(Statement stmnt = conn.createStatement()) {
+            ResultSet resultSet = stmnt.executeQuery("select * from books where isbn13 = '" + isbn13 + "'");
+            while (resultSet.next()){
+                Book book = new Book();
+                book.setName(resultSet.getString("name"));
+                book.setDescription(resultSet.getString("description"));
+                book.setAuthor(resultSet.getString("author"));
+                book.setPageCount(resultSet.getInt("page_count"));
+                book.setIsbn13(resultSet.getString("isbn13"));
+                book.setIsbn10(resultSet.getString("isbn10"));
+                book.setOcls(resultSet.getString("ocls"));
+                return book;
+            }
+            return null;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }

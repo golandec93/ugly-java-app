@@ -28,10 +28,9 @@ public class BookController {
                 .collect(Collectors.toList());
     }
 
-    @GetMapping("/{bookId}")
-    public BookDTO getBook(@PathVariable String bookId) {
-        var bookService = new BookService();
-        var book = bookService.getBook(bookId);
+    @GetMapping("/{isbn13}")
+    public BookDTO getBook(@PathVariable String isbn13) {
+        var book = bookService.getBook(isbn13);
         return new BookTransportConverter().convert(book);
     }
 
