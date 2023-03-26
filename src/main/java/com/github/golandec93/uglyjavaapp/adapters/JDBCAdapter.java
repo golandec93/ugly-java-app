@@ -1,4 +1,4 @@
-package com.netcracker.mama0415.uglyjavaapp.adapters;
+package com.github.golandec93.uglyjavaapp.adapters;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

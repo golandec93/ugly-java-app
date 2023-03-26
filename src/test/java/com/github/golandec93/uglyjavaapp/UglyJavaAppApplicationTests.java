@@ -1,4 +1,4 @@
-package com.netcracker.mama0415.uglyjavaapp;
+package com.github.golandec93.uglyjavaapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

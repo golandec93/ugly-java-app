@@ -1,10 +1,10 @@
-package com.netcracker.mama0415.uglyjavaapp.web;
+package com.github.golandec93.uglyjavaapp.web;
 
-import com.netcracker.mama0415.uglyjavaapp.model.BookAvailabilityRecord;
-import com.netcracker.mama0415.uglyjavaapp.model.BookDTO;
-import com.netcracker.mama0415.uglyjavaapp.service.BookService;
-import com.netcracker.mama0415.uglyjavaapp.service.BookTransportConverter;
-import com.netcracker.mama0415.uglyjavaapp.service.WarehouseService;
+import com.github.golandec93.uglyjavaapp.model.BookAvailabilityRecord;
+import com.github.golandec93.uglyjavaapp.model.BookDTO;
+import com.github.golandec93.uglyjavaapp.service.BookService;
+import com.github.golandec93.uglyjavaapp.service.BookTransportConverter;
+import com.github.golandec93.uglyjavaapp.service.WarehouseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

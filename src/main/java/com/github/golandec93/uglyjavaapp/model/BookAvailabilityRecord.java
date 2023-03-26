@@ -1,4 +1,4 @@
-package com.netcracker.mama0415.uglyjavaapp.model;
+package com.github.golandec93.uglyjavaapp.model;
 
 public class BookAvailabilityRecord {
     private String warehouseId;

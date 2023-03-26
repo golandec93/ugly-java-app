@@ -7,14 +7,14 @@ a book store. It could return a list of books, a book and availability report fo
 
 ### What's wrong with the BookService?
 
-Look at [BookService.java](./src/main/java/com/netcracker/mama0415/uglyjavaapp/service/BookService.java). 
+Look at [BookService.java](./src/main/java/com/github/golandec93/uglyjavaapp/service/BookService.java). 
 Do you see any principles violations or bad smells within the class? Name them and tell how it should be fixed.
 
 Refactor the class
 
 ### Hmm.. WarehouseService looks even worse
 
-Take a look at [WarehouseService.java](./src/main/java/com/netcracker/mama0415/uglyjavaapp/service/BookService.java).
+Take a look at [WarehouseService.java](./src/main/java/com/github/golandec93/uglyjavaapp/service/BookService.java).
 
 Optimize data calls. Refactor the class
 

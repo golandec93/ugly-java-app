@@ -1,7 +1,7 @@
-package com.netcracker.mama0415.uglyjavaapp.service;
+package com.github.golandec93.uglyjavaapp.service;
 
-import com.netcracker.mama0415.uglyjavaapp.adapters.JDBCAdapter;
-import com.netcracker.mama0415.uglyjavaapp.model.Warehouse;
+import com.github.golandec93.uglyjavaapp.adapters.JDBCAdapter;
+import com.github.golandec93.uglyjavaapp.model.Warehouse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
