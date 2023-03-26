@@ -1,0 +1,5 @@
+FROM postgres:15-alpine
+ENV POSTGRES_USER=UGLY_APP
+ENV POSTGRES_PASSWORD=UGLY_APP
+ADD ./init /docker-entrypoint-initdb.d
+EXPOSE 5432
