@@ -3,7 +3,7 @@ package com.netcracker.mama0415.uglyjavaapp.model;
 public class BookDTO {
     private String author;
     private String name;
-    private String id;
+    private String isbn13;
     private int pageCount;
     private String description;
 
@@ -23,12 +23,12 @@ public class BookDTO {
         this.name = name;
     }
 
-    public String getId() {
-        return id;
+    public String getIsbn13() {
+        return isbn13;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setIsbn13(String isbn13) {
+        this.isbn13 = isbn13;
     }
 
     public int getPageCount() {

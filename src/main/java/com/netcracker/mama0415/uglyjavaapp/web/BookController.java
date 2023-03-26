@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/books")
 public class BookController {
     @Autowired private BookService bookService;
+    @Autowired private WarehouseService warehouseService;
 
     @GetMapping
     public Collection<BookDTO> getBooksList() {
@@ -34,10 +35,9 @@ public class BookController {
         return new BookTransportConverter().convert(book);
     }
 
-    @GetMapping("/{bookId}/availability")
-    public Collection<BookAvailabilityRecord> getBookAvailability(@PathVariable String bookId) {
-        var warehouseService = new WarehouseService();
-        var availabilityReport = warehouseService.getAvailabilityReport(bookId);
+    @GetMapping("/{isbn13}/availability")
+    public Collection<BookAvailabilityRecord> getBookAvailability(@PathVariable String isbn13) {
+        var availabilityReport = warehouseService.getAvailabilityReport(isbn13);
         return availabilityReport.entrySet().stream()
                 .map((entry -> {
                     var record = new BookAvailabilityRecord();
