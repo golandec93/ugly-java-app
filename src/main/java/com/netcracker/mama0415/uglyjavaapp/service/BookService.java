@@ -15,14 +15,15 @@ import java.util.Collection;
 @Component
 public class BookService {
 
-    @Autowired private JDBCAdapter jdbcAdapter;
+    @Autowired
+    private JDBCAdapter jdbcAdapter;
 
     public Collection<Book> getBooks() {
         final Connection conn = jdbcAdapter.getConnection();
-        try(Statement stmt = conn.createStatement()) {
+        try (Statement stmt = conn.createStatement()) {
             ResultSet resultSet = stmt.executeQuery("select * from books");
             Collection<Book> books = new ArrayList<>();
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 Book book = new Book();
                 book.setName(resultSet.getString("name"));
                 book.setDescription(resultSet.getString("description"));
@@ -47,9 +48,9 @@ public class BookService {
 
     public Book getBook(String isbn13) {
         final Connection conn = jdbcAdapter.getConnection();
-        try(Statement stmnt = conn.createStatement()) {
+        try (Statement stmnt = conn.createStatement()) {
             ResultSet resultSet = stmnt.executeQuery("select * from books where isbn13 = '" + isbn13 + "'");
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 Book book = new Book();
                 book.setName(resultSet.getString("name"));
                 book.setDescription(resultSet.getString("description"));
