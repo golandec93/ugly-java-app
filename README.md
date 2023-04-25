@@ -1,7 +1,88 @@
 # The Ugly Java App
 
-The app is a web service that allows its users to get details about books available in 
+The app is a web service that allows users to get details about books available in 
 a book store. It could return a list of books, a book and availability report for a book.
+
+<!-- TOC -->
+* [The Ugly Java App](#the-ugly-java-app)
+  * [REST API](#rest-api)
+    * [Book resource](#book-resource)
+      * [Get Books](#get-books)
+      * [Get a book](#get-a-book)
+      * [Get number of book copies available in stocks](#get-number-of-book-copies-available-in-stocks)
+  * [Data Base](#data-base)
+    * [Books](#books)
+    * [Warehouse](#warehouse)
+    * [Book_availability](#book_availability)
+  * [Tasks](#tasks)
+    * [What's wrong with the BookService?](#whats-wrong-with-the-bookservice)
+    * [Hmm.. WarehouseService looks even worse](#hmm-warehouseservice-looks-even-worse)
+    * [Let's add new parameter in BookController](#lets-add-new-parameter-in-bookcontroller)
+    * [* Migrate persistence calls in BookService from JDBC to JPA](#--migrate-persistence-calls-in-bookservice-from-jdbc-to-jpa)
+<!-- TOC -->
+
+## REST API
+
+### Book resource
+
+#### Get Books
+
+Request
+
+`HTTP.GET /book`
+
+Response
+
+```json
+[{
+  "author": "George Orwell",
+  "name": "1984",
+  "isbn13": "9780451524935",
+  "pageCount": 336,
+  "description": null
+}, {
+  ...
+}]
+```
+
+#### Get a book
+
+Request
+
+`HTTP.GET /book/:isbn13`
+
+Response 
+
+```json
+{
+    "author": "Rowling, J. K",
+    "name": "Harry Potter and the Prisoner of Azkaban",
+    "isbn13": "9780747546290",
+    "pageCount": 0,
+    "description": null
+}
+```
+
+#### Get number of book copies available in stocks
+
+Request
+
+`HTTP.GET /books/:isbn13/availability`
+
+Response
+
+```json
+[
+  {
+    "warehouseId": "2",
+    "warehouseName": "Bangalore, Nagasandra",
+    "warehouseAddress": "BNG/NGS/110FTRD/456",
+    "available": 1
+  },{
+    ...
+  }
+]
+```
 
 ## Data Base
 ![schema](/doc/assets/db-schemapng.png)
